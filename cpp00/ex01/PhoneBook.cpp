@@ -6,39 +6,66 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:49:33 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/09/14 19:55:13 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/09/15 12:01:20 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.class.hpp"
 #include <iostream>
 
+void	PrintSearch(std::string str, int index)
+{
+	int	i;
+
+	i = 0;
+	index + 1;
+	while (i < 9 && str[i])
+	{
+		std::cout << std::right << str[i];
+		i++;
+	}
+	if (str[i] && i == 9)
+		std::cout << std::right << '.';
+	else if (i != 10)
+	{
+		while (i <= 10)
+		{
+			std::cout << std::right << ' ';
+			i++;
+		}
+	}
+}
+
 void	Search(Phonebook *book, int *num)
 {
 	int	index;
 
 	index = 0;
-	std::cout << "search" << std::endl;
 	while (index < *num)
 	{
-		std::cout << book->contact[index].FirstName << std::endl;
-		std::cout << book->contact[index].LastName << std::endl;
-		std::cout << book->contact[index].Nickname << std::endl;
-		std::cout << book->contact[index].PhoneNumber << std::endl;
-		std::cout << book->contact[index].DarkestSecret << std::endl;
+		std::cout << std::right << index + 1 << "         |";
+		PrintSearch(book->contact[index].FirstName, index);
+		std::cout << std::right << "|";
+		PrintSearch(book->contact[index].LastName, index);
+		std::cout << std::right << "|";
+		PrintSearch(book->contact[index].Nickname, index);
+		std::cout << std::right << "|";
+		PrintSearch(book->contact[index].PhoneNumber, index);
+		std::cout << std::right << "|";
+		PrintSearch(book->contact[index].DarkestSecret, index);
+		std::cout << std::right << '\n';
 		index++;
 	}
 }
 
 void	Add(int *num, Phonebook *book)
 {
-	char	buffer[1000];
+	char	buffer[500];
 
 	if (*num >= 8 || *num < 0)
 		*num = 7;
 	std::cout << "First name : ";
-	std::cin >> buffer;
-	book->contact[*num].FirstName = buffer;
+	std::cin.getline(book->contact[*num].FirstName,500);
 	std::cout << "Last name : ";
 	std::cin >> buffer;
 	book->contact[*num].LastName = buffer;
@@ -51,7 +78,7 @@ void	Add(int *num, Phonebook *book)
 	std::cout << "Darkest secret : ";
 	std::cin >> buffer;
 	book->contact[*num].DarkestSecret = buffer;
-	*num++;
+	*num += 1;
 }
 
 int	main(int argc, char **argv)
@@ -73,7 +100,9 @@ int	main(int argc, char **argv)
 		while (1)
 		{
 			std::cin >> buffer;
-			if (buffer == end)
+			if (buffer == NULL)
+				continue ;
+			else if (buffer == end)
 				return (0);
 			else if (buffer == add)
 				Add(&num, &book);
