@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:39:46 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/09/15 12:02:37 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:33:03 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,8 @@
 class Contact
 {
   public:
-	char  FirstName[500];
+  
+	std::string FirstName;
 	std::string LastName;
 	std::string Nickname;
 	std::string PhoneNumber;

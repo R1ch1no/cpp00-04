@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:49:33 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/09/15 12:01:20 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/09/15 17:43:00 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,31 +60,25 @@ void	Search(Phonebook *book, int *num)
 
 void	Add(int *num, Phonebook *book)
 {
-	char	buffer[500];
-
 	if (*num >= 8 || *num < 0)
 		*num = 7;
 	std::cout << "First name : ";
-	std::cin.getline(book->contact[*num].FirstName,500);
+	getline(std::cin, book->contact[*num].FirstName);
 	std::cout << "Last name : ";
-	std::cin >> buffer;
-	book->contact[*num].LastName = buffer;
+	getline(std::cin, book->contact[*num].LastName);
 	std::cout << "Nickname : ";
-	std::cin >> buffer;
-	book->contact[*num].Nickname = buffer;
+	getline(std::cin, book->contact[*num].Nickname);
 	std::cout << "Phone number : ";
-	std::cin >> buffer;
-	book->contact[*num].PhoneNumber = buffer;
+	getline(std::cin, book->contact[*num].PhoneNumber);
 	std::cout << "Darkest secret : ";
-	std::cin >> buffer;
-	book->contact[*num].DarkestSecret = buffer;
+	getline(std::cin, book->contact[*num].DarkestSecret);
 	*num += 1;
 }
 
 int	main(int argc, char **argv)
 {
 	int num = 0;
-	char buffer[1000];
+	std::string buffer;
 	std::string add = "ADD";
 	std::string search = "SEARCH";
 	std::string end = "EXIT";
@@ -99,9 +93,11 @@ int	main(int argc, char **argv)
 	{
 		while (1)
 		{
-			std::cin >> buffer;
-			if (buffer == NULL)
-				continue ;
+			std::cout << "Operation : ";
+			buffer = " ";
+			getline(std::cin, buffer);
+			if (buffer == "\0")
+				continue;
 			else if (buffer == end)
 				return (0);
 			else if (buffer == add)
