@@ -6,24 +6,38 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:39:46 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/09/15 17:33:03 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/02 20:09:17 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef CONTACT_CLASS_H
-# define CANTACT_CLASS_H
+# define CONTACT_CLASS_H
 
+# include <cstdlib>
+# include <iomanip>
+# include <iostream>
 # include <string>
 
 class Contact
 {
-  public:
-  
+  private:
 	std::string FirstName;
 	std::string LastName;
 	std::string Nickname;
 	std::string PhoneNumber;
 	std::string DarkestSecret;
+
+  public:
+	void saveFN(std::string);
+	void saveLN(std::string);
+	void saveNN(std::string);
+	void savePN(std::string);
+	void saveDS(std::string);
+	std::string giveFN();
+	std::string giveLN();
+	std::string giveNN();
+	std::string givePN();
+	std::string giveDS();
 };
 
 #endif

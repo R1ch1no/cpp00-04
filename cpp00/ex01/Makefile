@@ -6,33 +6,33 @@
 #    By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/14 17:10:59 by rkurnava          #+#    #+#              #
-#    Updated: 2023/09/18 12:50:14 by rkurnava         ###   ########.fr        #
+#    Updated: 2023/10/02 19:36:11 by rkurnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phoneBook
-
-CC = c++
-
+CXX = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98 -g
 
-all : $(NAME)
+all: $(NAME)
 
-SRC = PhoneBook.cpp
-
+SRC = Ex01.cpp ContactAccessors.cpp PhoneBookAccessors.cpp
 OBJ = $(SRC:.cpp=.o)
 
-$(NAME) : $(OBJ)
-		@$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
+$(NAME): $(OBJ)
+	@$(CXX) $(OBJ) -o $(NAME)
 
-clean :
+%.o: %.cpp
+	@$(CXX) $(CFLAGS) -c $< -o $@
+
+clean:
 	@rm -f $(OBJ)
 	@echo "Cleaning done"
 
-fclean : clean
+fclean: clean
 	@rm -f $(NAME)
 	@echo "Everything cleaned"
 
-re : fclean all
+re: fclean all
 
 .PHONY: all clean fclean re
