@@ -6,17 +6,28 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/03 19:38:49 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/03 19:40:02 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 21:05:29 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string>
+#ifndef Zombie_HPP
+# define Zombie_HPP
+
+# include <iostream>
+# include <string>
 
 class Zombie
 {
   private:
 	std::string name;
-    
+
   public:
-    void announce(void);
+	Zombie(std::string);
+	~Zombie();
+	void announce(void);
 };
+
+void	randomChump(std::string name);
+Zombie	*newZombie(std::string name);
+
+#endif

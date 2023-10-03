@@ -6,7 +6,7 @@
 #    By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 19:44:54 by rkurnava          #+#    #+#              #
-#    Updated: 2023/10/03 19:45:33 by rkurnava         ###   ########.fr        #
+#    Updated: 2023/10/03 21:20:50 by rkurnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ clean :
 	@echo "Cleaning done"
 
 fclean : clean
-	@rm -f megaphone
+	@rm -f $(NAME)
 	@echo "Everything cleaned"
 
 re : fclean all
