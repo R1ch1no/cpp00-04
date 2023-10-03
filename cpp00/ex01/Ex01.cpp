@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:49:33 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/03 13:50:20 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 13:58:35 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,32 +14,17 @@
 
 void	PrintSearch(std::string str)
 {
-	char	buffer[11];
-	int		i;
-	int		j;
-	int		len;
-
-	i = 0;
-	j = 0;
-	len = str.length();
-	while (i < 10 && i < 10 - len)
+	std::string formated;
+	if (str.length() > 10)
 	{
-		buffer[i] = ' ';
-		i++;
+		formated = str.substr(0, 9);
+		std::cout << std::right << std::setw(9) << formated << ".|";
 	}
-	while (i < 10 && str[j])
+	else
 	{
-		buffer[i] = str[j];
-		i++;
-		j++;
+		formated = str;
+		std::cout << std::right << std::setw(10)<< formated << "|";
 	}
-	buffer[i] = 0;
-	if (len > 10)
-	{
-		if (str[10])
-			buffer[9] = '.';
-	}
-	std::cout << std::right << std::setw(10) << buffer << "|";
 }
 
 void	PrintContact(Phonebook *book, int contact)
