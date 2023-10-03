@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:49:33 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/02 20:47:03 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 02:23:07 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ void	PrintSearch(std::string str)
 
 void	PrintContact(Phonebook *book, int contact)
 {
-	std::cout << "First name : " << book->getPerson(contact).get_data(0) << std::endl;
-	std::cout << "Last name : " << book->getPerson(contact).get_data(1) << std::endl;
-	std::cout << "Nickname : " << book->getPerson(contact).get_data(2) << std::endl;
-	std::cout << "Phone number : " << book->getPerson(contact).get_data(3) << std::endl;
-	std::cout << "Darkest secret : " << book->getPerson(contact).get_data(4) << std::endl;
+	std::cout << "First name : " << book->get_data(contact, 0) << std::endl;
+	std::cout << "Last name : " << book->get_data(contact, 1) << std::endl;
+	std::cout << "Nickname : " << book->get_data(contact, 2) << std::endl;
+	std::cout << "Phone number : " << book->get_data(contact, 3) << std::endl;
+	std::cout << "Darkest secret : " << book->get_data(contact, 4) << std::endl;
 }
 
 int	contactInfo(int limit)
@@ -89,9 +89,9 @@ void	PrintBody(Phonebook *book, int index, int limit)
 	{
 		std::cout << std::right << std::setw(10) << "|         " << index
 			+ 1 << std::setw(1) << "|";
-		PrintSearch(book->getPerson(index).get_data(0));
-		PrintSearch(book->getPerson(index).get_data(1));
-		PrintSearch(book->getPerson(index).get_data(2));
+		PrintSearch(book->get_data(index, 0));
+		PrintSearch(book->get_data(index, 1));
+		PrintSearch(book->get_data(index, 2));
 		std::cout << "\n";
 		index++;
 	}
@@ -113,7 +113,7 @@ void	PrintHead(void)
 	std::cout << std::right << std::setw(9) << "---------- " << std::endl;
 }
 
-void	Search(Phonebook (*)(), int *num)
+void	Search(Phonebook *book, int *num)
 {
 	int	contact;
 	int	index;
@@ -147,7 +147,7 @@ int	isEmpty(std::string str)
 		return (0);
 }
 
-void	Add(int *num, Phonebook book)
+void	Add(int *num, Phonebook *book)
 {
 	int	person;
 
@@ -155,38 +155,37 @@ void	Add(int *num, Phonebook book)
 	person = *num % 8;
 	std::cout << "First name : ";
 	getline(std::cin, buffer);
-	
-	save_data(person , 0, buffer);
-	if (isEmpty())
+	book->save_data(person, 0, buffer);
+	if (isEmpty(book->get_data(person, 0)))
 		return ;
 	std::cout << "Last name : ";
 	getline(std::cin, buffer);
-	book->getPerson(num).save_data(buffer, 1);
-	if (isEmpty(book->getPerson(person).get_data(1)))
+	book->save_data(person, 1, buffer);
+	if (isEmpty(book->get_data(person, 1)))
 		return ;
 	std::cout << "Nickname : ";
 	getline(std::cin, buffer);
-	book->getPerson(num).save_data(buffer, 2);
-	if (isEmpty(book->getPerson(person).get_data(2)))
+	book->save_data(person, 2, buffer);
+	if (isEmpty(book->get_data(person, 2)))
 		return ;
 	std::cout << "Phone number : ";
 	getline(std::cin, buffer);
-	book->getPerson(num).save_data(buffer, 3);
-	if (isEmpty(book->getPerson(person).get_data(3)))
+	book->save_data(person, 3, buffer);
+	if (isEmpty(book->get_data(person, 3)))
 		return ;
 	std::cout << "Darkest secret : ";
 	getline(std::cin, buffer);
-	book->getPerson(num).save_data(buffer, 4);
-	if (isEmpty(book->getPerson(person).get_data(4)))
+	book->save_data(person, 4, buffer);
+	if (isEmpty(book->get_data(person, 4)))
 		return ;
 	*num += 1;
 }
 
 int	main(int argc, char **argv)
 {
-	int	num;
+	int			num;
+	Phonebook	book;
 
-	Phonebook book;
 	num = 0;
 	(void)argv;
 	std::string buffer;
@@ -210,9 +209,9 @@ int	main(int argc, char **argv)
 			else if (buffer == end)
 				return (0);
 			else if (buffer == add)
-				Add(&num, book);
+				Add(&num, &book);
 			else if (buffer == search)
-				Search(book, &num);
+				Search(&book, &num);
 			else
 			{
 				std::cout << "Operation not recognised";

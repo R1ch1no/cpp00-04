@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:39:46 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/02 20:09:17 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 01:51:16 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,8 @@ class Contact
 	std::string DarkestSecret;
 
   public:
+    Contact(void);
+	~Contact(void);
 	void saveFN(std::string);
 	void saveLN(std::string);
 	void saveNN(std::string);

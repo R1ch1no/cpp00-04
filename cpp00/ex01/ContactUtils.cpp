@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:14:54 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/02 20:09:50 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 02:27:13 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,4 +61,12 @@ std::string Contact::givePN()
 std::string Contact::giveDS()
 {
 	return (DarkestSecret);
+}
+
+Contact::Contact(void)
+{
+}
+
+Contact::~Contact(void)
+{
 }
