@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:49:33 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/03 12:03:12 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 12:10:50 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -202,13 +202,13 @@ int	main(int argc, char **argv)
 		{
 			std::cout << "Operation : ";
 			buffer = "";
-			if (getline(std::cin, buffer).eofbit)
+			if (std::cin.peek() == EOF)
 			{
-				buffer = "";
 				std::cin.clear();
-				std::cout << std::endl;
+				continue;
 			}
-			else if (buffer == end)
+			getline(std::cin, buffer);
+			if (buffer == end)
 				return (0);
 			else if (buffer == add)
 				Add(&num, &book);
