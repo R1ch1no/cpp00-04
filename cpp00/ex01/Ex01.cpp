@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:49:33 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/03 14:43:05 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 15:26:47 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,14 +121,46 @@ void	Search(Phonebook *book, int *num)
 
 int	isEmpty(std::string str)
 {
-	if (str.length() == 0)
+	bool	empty;
+
+	empty = true;
+	for (int i = 0; i < (int)str.length(); i++)
+	{
+		if (str[i] != ' ' && str[i] != '\t' && str[i] != '\r' && str[i] != '\v'
+			&& str[i] != '\f')
+			empty = false;
+	}
+	if (str.empty() || empty)
 	{
 		std::cout << "Invalid contact\n"
 					<< "No contact field can be empty" << std::endl;
 		return (1);
 	}
-	else
-		return (0);
+	return (0);
+}
+
+int	NaN(std::string num)
+{
+	bool	prefix;
+	bool	invalid;
+
+	prefix = false;
+	invalid = false;
+	for (int i = 0; i < (int)num.length(); i++)
+	{
+		if (!isdigit(num[i]) && num[i] != '+')
+			invalid = true;
+		if (num[i] == '+' && !prefix)
+			prefix = true;
+		else if (num[i] == '+' && prefix)
+			invalid = true;
+		if (invalid == true)
+		{
+			std::cout << "Invalid phone number format!" << std::endl;
+			return (1);
+		}
+	}
+	return (0);
 }
 
 void	Add(int *num, Phonebook *book)
@@ -155,7 +187,7 @@ void	Add(int *num, Phonebook *book)
 	std::cout << "Phone number : ";
 	getline(std::cin, buffer);
 	book->save_data(person, 3, buffer);
-	if (isEmpty(book->get_data(person, 3)))
+	if (isEmpty(book->get_data(person, 3)) || NaN(book->get_data(person, 3)))
 		return ;
 	std::cout << "Darkest secret : ";
 	getline(std::cin, buffer);
