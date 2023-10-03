@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:49:33 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/03 15:26:47 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 16:03:36 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,10 @@ void	Search(Phonebook *book, int *num)
 	if (limit > 8)
 		limit = 8;
 	if (limit == 0)
+	{
+		std::cout << "Phonebook is empty" << std::endl;
 		return ;
+	}
 	PrintHead();
 	PrintBody(book, index, limit);
 	PrintBottom();
