@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:49:33 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/03 02:23:07 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 12:03:12 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,8 +75,16 @@ int	contactInfo(int limit)
 	return (-1);
 }
 
-void	PrintBottom(void)
+void	PrintHead(void)
 {
+	std::cout << std::right << std::setw(11) << " -----------";
+	std::cout << std::right << std::setw(10) << "-----------";
+	std::cout << std::right << std::setw(10) << "-----------";
+	std::cout << std::right << std::setw(9) << "---------- " << std::endl;
+	std::cout << std::right << std::setw(11) << "|     Index|";
+	std::cout << std::right << std::setw(11) << "First Name|";
+	std::cout << std::right << std::setw(11) << " Last Name|";
+	std::cout << std::right << std::setw(11) << "  Nickname|" << std::endl;
 	std::cout << std::right << std::setw(11) << " -----------";
 	std::cout << std::right << std::setw(10) << "-----------";
 	std::cout << std::right << std::setw(10) << "-----------";
@@ -96,17 +104,8 @@ void	PrintBody(Phonebook *book, int index, int limit)
 		index++;
 	}
 }
-
-void	PrintHead(void)
+void	PrintBottom(void)
 {
-	std::cout << std::right << std::setw(11) << " -----------";
-	std::cout << std::right << std::setw(10) << "-----------";
-	std::cout << std::right << std::setw(10) << "-----------";
-	std::cout << std::right << std::setw(9) << "---------- " << std::endl;
-	std::cout << std::right << std::setw(11) << "|     Index|";
-	std::cout << std::right << std::setw(11) << "First Name|";
-	std::cout << std::right << std::setw(11) << " Last Name|";
-	std::cout << std::right << std::setw(11) << "  Nickname|" << std::endl;
 	std::cout << std::right << std::setw(11) << " -----------";
 	std::cout << std::right << std::setw(10) << "-----------";
 	std::cout << std::right << std::setw(10) << "-----------";
@@ -202,10 +201,13 @@ int	main(int argc, char **argv)
 		while (1)
 		{
 			std::cout << "Operation : ";
-			buffer = " ";
-			getline(std::cin, buffer);
-			if (buffer == "\0")
-				continue ;
+			buffer = "";
+			if (getline(std::cin, buffer).eofbit)
+			{
+				buffer = "";
+				std::cin.clear();
+				std::cout << std::endl;
+			}
 			else if (buffer == end)
 				return (0);
 			else if (buffer == add)

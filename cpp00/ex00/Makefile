@@ -6,15 +6,14 @@
 #    By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/14 17:10:59 by rkurnava          #+#    #+#              #
-#    Updated: 2023/09/14 17:23:58 by rkurnava         ###   ########.fr        #
+#    Updated: 2023/10/03 11:49:29 by rkurnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
-CC = c++
-
-CFLAGS = -Wall -Wextra -Werror -std=c++98
+CXX = c++
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 
@@ -22,8 +21,12 @@ SRC = megaphone.cpp
 
 OBJ = $(SRC:.cpp=.o)
 
-$(NAME) : $(OBJ)
-		@$(CC) $(OBJ) $(CFLAGS) -o $(NAME)
+$(NAME): $(OBJ)
+	$(CXX) $(OBJ) -o $(NAME)
+
+%.o: %.cpp
+	$(CXX) $(CXXFLAGS) -c $< -o $@
+
 
 clean :
 	@rm -f $(OBJ)
