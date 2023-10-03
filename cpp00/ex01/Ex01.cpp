@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:49:33 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/03 13:58:35 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 14:43:05 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	PrintSearch(std::string str)
 	else
 	{
 		formated = str;
-		std::cout << std::right << std::setw(10)<< formated << "|";
+		std::cout << std::right << std::setw(10) << formated << "|";
 	}
 }
 
@@ -38,21 +38,20 @@ void	PrintContact(Phonebook *book, int contact)
 
 int	contactInfo(int limit)
 {
-	char	buffer[256];
-	int		contact;
+	int	contact;
 
-	std::string collector;
+	std::string buffer;
 	std::cout << "Who's information do you wish to see ? (index) : ";
-	std::cin >> buffer;
+	getline(std::cin, buffer);
 	contact = 0;
-	contact = atoi(buffer);
-	getline(std::cin, collector);
+	std::stringstream ss(buffer);
+	ss >> contact;
 	if (contact <= 0 || contact > limit)
 	{
 		std::cout << "No contact found under this index! Try again : ";
-		std::cin >> buffer;
-		contact = atoi(buffer);
-		getline(std::cin, collector);
+		getline(std::cin, buffer);
+		std::stringstream ss(buffer);
+		ss >> contact;
 	}
 	if (contact <= 0 || contact > limit)
 		std::cout << "No contact found under this index! Leaving search" << std::endl;
