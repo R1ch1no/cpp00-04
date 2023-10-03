@@ -6,36 +6,37 @@
 #    By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/14 17:10:59 by rkurnava          #+#    #+#              #
-#    Updated: 2023/10/03 11:49:29 by rkurnava         ###   ########.fr        #
+#    Updated: 2023/10/03 13:49:37 by rkurnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = megaphone
-
+NAME = phoneBook
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
-all : $(NAME)
+all: $(NAME)
 
-SRC = megaphone.cpp
-
+SRC = Ex01.cpp Contact.cpp PhoneBook.cpp
 OBJ = $(SRC:.cpp=.o)
 
 $(NAME): $(OBJ)
 	$(CXX) $(OBJ) -o $(NAME)
 
+Ex01.o : ./Ex01.hpp
+Contact.o : ./Contact.hpp
+PhoneBook.o : ./PhoneBook.hpp
+
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
-
-clean :
+clean:
 	@rm -f $(OBJ)
 	@echo "Cleaning done"
 
-fclean : clean
-	@rm -f megaphone
+fclean: clean
+	@rm -f $(NAME)
 	@echo "Everything cleaned"
 
-re : fclean all
+re: fclean all
 
 .PHONY: all clean fclean re

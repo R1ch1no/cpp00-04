@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ContactAccessors.cpp                               :+:      :+:    :+:   */
+/*   Contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 18:14:54 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/03 02:27:13 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 13:12:01 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Contact.class.hpp"
+#include "Contact.hpp"
 #include "Ex01.hpp"
 
 void Contact::saveFN(std::string str)

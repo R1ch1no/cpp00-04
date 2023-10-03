@@ -6,28 +6,12 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 17:13:27 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/09/14 17:43:16 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 13:44:15 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-
-int	PrintScream(char *message)
-{
-	int	index;
-
-	index = 0;
-	if (!message)
-		return (1);
-	while (message[index])
-	{
-		if (message[index] >= 'a' && message[index] <= 'z')
-			message[index] -= 'a' - 'A';
-		index++;
-	}
-	std::cout << message;
-	return (0);
-}
+#include <cstring>
 
 int	main(int argc, char **argv)
 {
@@ -43,10 +27,11 @@ int	main(int argc, char **argv)
 	{
 		while (argv[index])
 		{
-			PrintScream(argv[index]);
+			for (int i = 0; i < (int)(strlen(argv[index])); i++)
+				std::cout << (char)toupper(argv[index][i]);
 			index++;
 		}
-		std::cout << "\n";
+		std::cout << std::endl;
 	}
 	return (0);
 }

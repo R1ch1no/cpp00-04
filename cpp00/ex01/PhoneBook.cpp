@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PhoneBookAccessors.cpp                             :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/02 17:49:49 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/03 01:51:50 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 13:12:30 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ex01.hpp"
-#include "PhoneBook.class.hpp"
+#include "PhoneBook.hpp"
 
 void Phonebook::save_data(int y, int i, std::string str)
 {

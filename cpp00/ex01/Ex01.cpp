@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 18:49:33 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/03 12:10:50 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/03 13:50:20 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	PrintSearch(std::string str)
 {
-	char	buffer[10];
+	char	buffer[11];
 	int		i;
 	int		j;
 	int		len;
@@ -33,6 +33,7 @@ void	PrintSearch(std::string str)
 		i++;
 		j++;
 	}
+	buffer[i] = 0;
 	if (len > 10)
 	{
 		if (str[10])
@@ -202,12 +203,12 @@ int	main(int argc, char **argv)
 		{
 			std::cout << "Operation : ";
 			buffer = "";
-			if (std::cin.peek() == EOF)
-			{
-				std::cin.clear();
-				continue;
-			}
 			getline(std::cin, buffer);
+			if (std::cin.eof())
+			{
+				std::cout << "Bye, Bye" << std::endl;
+				return (0);
+			}
 			if (buffer == end)
 				return (0);
 			else if (buffer == add)
