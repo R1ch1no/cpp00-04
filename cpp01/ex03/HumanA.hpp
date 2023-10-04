@@ -1,29 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 09:52:30 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/04 11:06:12 by rkurnava         ###   ########.fr       */
+/*   Created: 2023/10/04 12:19:11 by rkurnava          #+#    #+#             */
+/*   Updated: 2023/10/04 15:00:34 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef HUMANA_CPP
+# define HUMANA_CPP
 
-int	main(void)
+# include "Weapon.hpp"
+# include <iostream>
+# include <string>
+
+class HumanA
 {
-	int N;
-	Zombie *zombies;
+  private:
+	std::string name;
+    Weapon &weapon;
 
-	N = 20;
-	zombies = zombieHorde(N, "BrainWashedZombie");
-	for (int i = 0; i < N; i++)
-	{
-		zombies[i].announce();
-	}
-    if (N > 0)
-        delete[] zombies;
-    return (0);
-}
+  public:
+	HumanA(std::string str, Weapon &gun);
+	~HumanA();
+	void attack();
+};
+
+#endif

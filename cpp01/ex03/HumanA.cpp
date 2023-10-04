@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   HumanA.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 09:52:30 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/04 11:06:12 by rkurnava         ###   ########.fr       */
+/*   Created: 2023/10/04 12:18:04 by rkurnava          #+#    #+#             */
+/*   Updated: 2023/10/04 15:26:00 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#include "HumanA.hpp"
 
-int	main(void)
+void HumanA::attack(void)
 {
-	int N;
-	Zombie *zombies;
+	std::cout << this->name << " attacks with their " << this->weapon.getType() << std::endl;
+}
+HumanA::HumanA(std::string str, Weapon &gun) : name(str), weapon(gun)
+{
+	std::cout << this->name << " got created with : " << this->weapon.getType() << std::endl;
+}
 
-	N = 20;
-	zombies = zombieHorde(N, "BrainWashedZombie");
-	for (int i = 0; i < N; i++)
-	{
-		zombies[i].announce();
-	}
-    if (N > 0)
-        delete[] zombies;
-    return (0);
+HumanA::~HumanA(void)
+{
+	std::cout << this->name << " got destroyyyed" << std::endl;
 }

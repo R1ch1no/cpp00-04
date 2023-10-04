@@ -6,12 +6,12 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/14 17:13:27 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/03 15:56:59 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/04 16:50:59 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
-#include <cstring>
+#include <string>
 
 int	main(int argc, char **argv)
 {
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	{
 		while (argv[index])
 		{
-			for (int i = 0; i < (int)(strlen(argv[index])); i++)
+			for (int i = 0; i < (int)(std::string(argv[index]).length()); i++)
 				std::cout << (char)toupper(argv[index][i]);
 			index++;
 		}

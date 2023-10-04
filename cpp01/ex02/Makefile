@@ -6,19 +6,19 @@
 #    By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 19:44:54 by rkurnava          #+#    #+#              #
-#    Updated: 2023/10/04 11:07:40 by rkurnava         ###   ########.fr        #
+#    Updated: 2023/10/04 11:15:05 by rkurnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 
-NAME = ex01
+NAME = ex02
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 all : $(NAME)
 
-SRC = main.cpp zombieHorde.cpp Zombie.cpp \
+SRC = main.cpp
 
 OBJ = $(SRC:.cpp=.o)
 

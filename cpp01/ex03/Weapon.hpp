@@ -1,29 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Weapon.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/04 09:52:30 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/04 11:06:12 by rkurnava         ###   ########.fr       */
+/*   Created: 2023/10/04 12:09:59 by rkurnava          #+#    #+#             */
+/*   Updated: 2023/10/04 12:37:29 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Zombie.hpp"
+#ifndef WEAPON_HPP
+#define WEAPON_HPP
 
-int	main(void)
+#include <string>
+
+class Weapon
 {
-	int N;
-	Zombie *zombies;
+    private:
+    std::string type;
+    public:
+    Weapon(std::string);
+    ~Weapon();
+    const std::string& getType();
+    void setType(std::string);
+};
 
-	N = 20;
-	zombies = zombieHorde(N, "BrainWashedZombie");
-	for (int i = 0; i < N; i++)
-	{
-		zombies[i].announce();
-	}
-    if (N > 0)
-        delete[] zombies;
-    return (0);
-}
+#endif
