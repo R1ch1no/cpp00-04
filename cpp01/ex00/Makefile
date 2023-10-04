@@ -6,7 +6,7 @@
 #    By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 19:44:54 by rkurnava          #+#    #+#              #
-#    Updated: 2023/10/03 21:20:50 by rkurnava         ###   ########.fr        #
+#    Updated: 2023/10/04 19:17:49 by rkurnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,19 @@ NAME = ex00
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
+INCLUDES = ./Zombie.hpp
+
 all : $(NAME)
 
 SRC = main.cpp newZombie.cpp randomChump.cpp Zombie.cpp \
 
 OBJ = $(SRC:.cpp=.o)
 
+
 $(NAME): $(OBJ)
 	$(CXX) $(OBJ) -o $(NAME)
+
+$(OBJ) : $(INCLUDES)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@

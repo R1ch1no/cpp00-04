@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 18:16:18 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/04 18:43:49 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/04 19:17:04 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,5 +29,6 @@ class Harl
         ~Harl(void);
         void complain(std::string level);
 };
+
 
 #endif
