@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 15:33:42 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/04 16:48:37 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/04 17:46:33 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,10 +14,28 @@
 #include <string>
 #include <fstream>
 
-void replaceOccurence(std::string find, std::string replace, std::string buffer)
+std::string replaceOccurence(std::string find, std::string replace, std::string buffer)
 {
-    std::string collector;
+    int len;
+    int buffer_len;
+    std::string part;
+    std::string collector1;
+    std::string collector2;
     
+    len = find.length();
+    buffer_len = (int)buffer.length();
+    for (int i = 0; i < buffer_len; i++)
+    {
+        part = buffer.substr(i, len);
+        if (part == find)
+        {
+            collector2 += replace;
+            i += len - 1;
+        }
+        else
+        collector2 += buffer[i];
+    }
+    return (collector2);
 }
 
 int main(int argc, char **argv)
@@ -39,10 +57,7 @@ int main(int argc, char **argv)
         }
         std::string buffer;
         while(getline(readFile, buffer))
-        {
-            replaceOccurence(std::string (argv[2]),std::string (argv[3]), buffer);
-            outFilfe << buffer << std::endl;
-        }
+            outFilfe << replaceOccurence(std::string(argv[2]), std::string(argv[3]), buffer) << std::endl;
         readFile.close();
         outFilfe.close();
         return (0);

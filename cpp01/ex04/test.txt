@@ -1,7 +1,4 @@
-hello there
-how are you doing
-this exercise ...
-I dont know what
-to think about
-it
-.
+hello there somebody
+I dont know how to feel about this exercise
+		what do you think\t
+I honestly think that std::string is wunderbar
