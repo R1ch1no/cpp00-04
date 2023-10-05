@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 15:33:42 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/04 17:46:33 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:40:43 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ std::string replaceOccurence(std::string find, std::string replace, std::string 
     std::string collector2;
     
     len = find.length();
+    if (len == 0)
+        return (buffer);
     buffer_len = (int)buffer.length();
     for (int i = 0; i < buffer_len; i++)
     {

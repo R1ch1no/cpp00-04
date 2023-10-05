@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:26:35 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/04 15:28:24 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:30:38 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,10 @@ void HumanB::setWeapon(Weapon &gun)
 HumanB::HumanB(std::string str) : weapon(NULL)
 {
 	this->name = str;
-	std::cout << this->name << " got created with no weapon" << std::endl;
+	std::cout << this->name << " was created with no weapon" << std::endl;
 }
 
 HumanB::~HumanB(void)
 {
-	std::cout << this->name << " got destroyyyed" << std::endl;
+	std::cout << this->name << " got destrooooyed" << std::endl;
 }

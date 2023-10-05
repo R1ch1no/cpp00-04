@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:18:04 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/04 15:26:00 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/05 13:29:28 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,5 +23,5 @@ HumanA::HumanA(std::string str, Weapon &gun) : name(str), weapon(gun)
 
 HumanA::~HumanA(void)
 {
-	std::cout << this->name << " got destroyyyed" << std::endl;
+	std::cout << this->name << " got destrooooyed" << std::endl;
 }
