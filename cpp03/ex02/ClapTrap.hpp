@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:36:01 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/10 18:57:13 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/10 18:57:20 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ public:
     ClapTrap();
     ClapTrap(std::string);
     ClapTrap(ClapTrap const &other);
+    ClapTrap(std::string, int, int, int);
     ClapTrap &operator=(ClapTrap const &other);
     ~ClapTrap();
     void attack(const std::string &target);

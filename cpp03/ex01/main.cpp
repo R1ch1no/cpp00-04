@@ -6,22 +6,23 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:36:03 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/10 19:23:13 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/10 19:23:11 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
+#include "ScavTrap.hpp"
 
 int main(void)
 {
-    ClapTrap a ;
+    ClapTrap a;
     ClapTrap b("Jeremy");
-    
-    ClapTrap c("Monique");
-    ClapTrap d("Barbie");
-    
-    ClapTrap e(c);
-    ClapTrap f = d;
+
+    ScavTrap c("Monique");
+    ScavTrap d("Barbie");
+
+    ScavTrap e(c);
+    ScavTrap f = d;
     std::cout << "\n\nAll contructors are done\n" << std::endl;
     a.attack("Jeremy");
     b.takeDamage(5);
