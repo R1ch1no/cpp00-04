@@ -6,25 +6,28 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 19:06:13 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/10 15:08:14 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/10 16:51:57 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed()
+//-----------------Default-----------------------//
+
+Fixed::Fixed():fixed_point(0){}
+
+Fixed::Fixed(Fixed const &other) {*this = other;}
+
+Fixed &Fixed::operator=(Fixed const &other)
 {
-    fixed_point = 0;
+    if (this != &other)
+        this->fixed_point = other.getRawBits();
+    return (*this);
 }
 
-Fixed::~Fixed()
-{
-}
+Fixed::~Fixed(){}
 
-Fixed::Fixed(Fixed const &other)
-{
-    *this = other;
-}
+//-----------------Exercise-----------------------//
 
 Fixed::Fixed(int const num)
 {
@@ -37,12 +40,6 @@ Fixed::Fixed(float const num)
     this->setRawBits((int)roundf(scaledValue));
 }
 
-Fixed &Fixed::operator=(Fixed const &other)
-{
-    if (this != &other)
-        this->fixed_point = other.getRawBits();
-    return (*this);
-}
 
 int Fixed::operator<(Fixed const &other)
 {
@@ -94,6 +91,8 @@ Fixed Fixed::operator*(Fixed const &other)
 
 Fixed Fixed::operator/(Fixed const &other)
 {
+    if ((other.toFloat()) == 0)
+        return (this->toFloat()); 
     Fixed result(this->toFloat() / other.toFloat());
     return (result);
 }

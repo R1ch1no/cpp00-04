@@ -6,11 +6,13 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:54:32 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/09 16:30:16 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/10 16:48:14 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+//-----------------Default-----------------------//
 
 Fixed::Fixed()
 {
@@ -36,6 +38,8 @@ Fixed &Fixed::operator=(const Fixed &other)
         fixed_point = other.getRawBits();
     return (*this);
 }
+
+//-----------------Exercise-----------------------//
 
 int Fixed::getRawBits(void) const
 {

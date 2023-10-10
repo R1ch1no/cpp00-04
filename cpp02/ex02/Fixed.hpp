@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 19:06:15 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/10 15:08:14 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/10 16:23:11 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,16 +32,16 @@ public:
     Fixed operator++(int);
     Fixed &operator--();
     Fixed operator--(int);
+    Fixed operator+(Fixed const &other);
+    Fixed operator-(Fixed const &other);
+    Fixed operator*(Fixed const &other);
+    Fixed operator/(Fixed const &other);
     int operator<(Fixed const &other);
     int operator>(Fixed const &other);
     int operator>=(Fixed const &other);
     int operator<=(Fixed const &other);
     int operator==(Fixed const &other);
     int operator!=(Fixed const &other);
-    Fixed operator+(Fixed const &other);
-    Fixed operator-(Fixed const &other);
-    Fixed operator*(Fixed const &other);
-    Fixed operator/(Fixed const &other);
     static Fixed &min(Fixed &one, Fixed &two);
     static Fixed min(Fixed const &one, Fixed const &two);
     static Fixed &max(Fixed &one, Fixed &two);

@@ -6,11 +6,13 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 19:06:13 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/10 12:30:56 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/10 16:49:45 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
+
+//-----------------Default-----------------------//
 
 Fixed::Fixed()
 {
@@ -18,16 +20,27 @@ Fixed::Fixed()
     std::cout << "Default contructor called" << std::endl;
 }
 
-Fixed::~Fixed()
-{
-    std::cout << "Destructor called" << std::endl;
-}
 
 Fixed::Fixed(Fixed const & other)
 {
     std::cout << "Copy contructor called" << std::endl;
     *this = other;
 }
+
+Fixed &Fixed::operator=(Fixed const &other)
+{
+    std::cout << "Copy assignment operator called" << std::endl;
+    if (this != &other)
+        this->fixed_point = other.getRawBits();
+    return (*this);
+}
+
+Fixed::~Fixed()
+{
+    std::cout << "Destructor called" << std::endl;
+}
+
+//-----------------Exercise-----------------------//
 
 Fixed::Fixed(int const num)
 {
@@ -42,13 +55,6 @@ Fixed::Fixed(float const num)
     this->setRawBits((int)roundf(scaledValue));
 }
 
-Fixed &Fixed::operator=(Fixed const &other)
-{
-    std::cout << "Copy assignment operator called" << std::endl;
-    if (this != &other)
-        this->fixed_point = other.getRawBits();
-    return (*this);
-}
 
 int Fixed::getRawBits(void) const
 {
