@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:36:01 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/11 14:38:52 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/11 19:23:25 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,11 @@ public:
     int getHP(void);
     int getEP(void);
     int getAD(void);
-    void attack(const std::string &target);
+    virtual void attack(const std::string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
     void print_data(void);
+    void decEP();
 };
 
 #endif
