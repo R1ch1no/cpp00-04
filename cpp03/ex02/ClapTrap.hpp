@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:36:01 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/10 18:57:20 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/11 14:38:52 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,9 +31,14 @@ public:
     ClapTrap(std::string, int, int, int);
     ClapTrap &operator=(ClapTrap const &other);
     ~ClapTrap();
+    std::string getName(void)const;
+    int getHP(void);
+    int getEP(void);
+    int getAD(void);
     void attack(const std::string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
+    void print_data(void);
 };
 
 #endif

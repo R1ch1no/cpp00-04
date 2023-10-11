@@ -6,11 +6,11 @@
 #    By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/09 19:05:51 by rkurnava          #+#    #+#              #
-#    Updated: 2023/10/10 19:20:11 by rkurnava         ###   ########.fr        #
+#    Updated: 2023/10/11 12:39:40 by rkurnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = ex00
+NAME = ex01
 
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g

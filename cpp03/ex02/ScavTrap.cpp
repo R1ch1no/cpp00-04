@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 18:31:16 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/10 19:15:10 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/11 14:11:32 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,22 +16,29 @@
 
 ScavTrap::ScavTrap() : ClapTrap("", 100, 50, 20)
 {
-    std::cout << "ScavTrap default contructor with no name called" << std::endl;
+    std::cout << "ScavTrap default constructor with no name called" << std::endl;
 }
 
 ScavTrap::ScavTrap(std::string Name) : ClapTrap(Name, 100, 50, 20)
 {
-    std::cout << "ScavTrap default contructor with name called" << std::endl;
+    std::cout << "ScavTrap default constructor with name called" << std::endl;
+}
+
+ScavTrap::ScavTrap(std::string name, int hp, int ep, int ad)
+:ClapTrap(name, hp, ep, ad)
+{
+    std::cout << "ScavTrap constructor with all params called" << std::endl;
 }
 
 ScavTrap::ScavTrap(ScavTrap const &other)
 {
-    std::cout << "ScavTrap copy contructor called" << std::endl;
+    std::cout << "ScavTrap copy constructor called" << std::endl;
     *this = other;
 }
 
 ScavTrap &ScavTrap::operator=(ScavTrap const &other)
 {
+    std::cout << "ScavTrap copy assignment constructor called" << std::endl;
     if (this != &other)
     {
         ClapTrap::operator=(other);
