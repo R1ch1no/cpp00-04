@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 19:06:13 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/12 12:55:53 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/12 15:53:01 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,25 +71,25 @@ int Fixed::operator!=(Fixed const &other) const
     return (this->fixed_point != other.fixed_point);
 }
 
-Fixed Fixed::operator+(Fixed const &other)
+Fixed Fixed::operator+(Fixed const &other) const
 {
     Fixed result(this->toFloat() + other.toFloat());
     return (result);
 }
 
-Fixed Fixed::operator-(Fixed const &other)
+Fixed Fixed::operator-(Fixed const &other) const
 {
     Fixed result(this->toFloat() - other.toFloat());
     return (result);
 }
 
-Fixed Fixed::operator*(Fixed const &other)
+Fixed Fixed::operator*(Fixed const &other) const
 {
     Fixed result(this->toFloat() * other.toFloat());
     return (result);
 }
 
-Fixed Fixed::operator/(Fixed const &other)
+Fixed Fixed::operator/(Fixed const &other) const
 {
     if ((other.toFloat()) == 0)
         return (this->toFloat()); 

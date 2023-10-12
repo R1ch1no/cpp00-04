@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:54:28 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/09 15:07:39 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/12 15:50:24 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main(void)
 {
-    Fixed a;
+    const Fixed a;
     Fixed b(a);
     Fixed c;
     c = b;

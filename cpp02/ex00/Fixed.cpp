@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:54:32 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/12 12:40:38 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/12 15:51:43 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ Fixed::~Fixed()
     std::cout << "Destructor called" << std::endl;
 }
 
-Fixed::Fixed(Fixed& other)
+Fixed::Fixed(Fixed const & other)
 {
     std::cout << "Copy contructor called" << std::endl;
     *this = other;

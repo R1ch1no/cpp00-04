@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 19:05:57 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/12 12:49:00 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/12 15:53:18 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ int main(void)
     std::cout << ++a << std::endl;
     std::cout << a << std::endl;
     std::cout << a++ << std::endl;
-    std::cout << a << std::endl;
+    std::cout << b + a << std::endl;
     std::cout << b << std::endl;
     std::cout << Fixed::max(a, b) << std::endl;
     std::cout << Fixed::min(a, b) << std::endl;

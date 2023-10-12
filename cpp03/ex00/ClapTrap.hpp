@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 16:36:01 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/11 19:23:25 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/12 17:46:14 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,20 @@ private:
     int attack_damage;
 
 public:
-    ClapTrap();
-    ClapTrap(std::string);
+    ClapTrap(std::string = "");
     ClapTrap(ClapTrap const &other);
-    ClapTrap(std::string, int, int, int);
     ClapTrap &operator=(ClapTrap const &other);
     ~ClapTrap();
+    //getters
     std::string getName(void)const;
-    int getHP(void);
-    int getEP(void);
-    int getAD(void);
-    virtual void attack(const std::string &target);
+    int getHP(void) const;
+    int getEP(void) const;
+    int getAD(void) const;
+    void print_data(void)const;
+    //exercise member functions
+    void attack(const std::string &target);
     void takeDamage(unsigned int amount);
     void beRepaired(unsigned int amount);
-    void print_data(void);
-    void decEP();
 };
 
 #endif

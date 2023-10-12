@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:54:29 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/09 15:27:31 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/12 15:51:30 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Fixed
         static const int fractional_bits = 8;
     public :
         Fixed();
-        Fixed(Fixed& other);
+        Fixed(Fixed const & other);
         Fixed& operator=(const Fixed& other);
         ~Fixed();
         int getRawBits(void) const;

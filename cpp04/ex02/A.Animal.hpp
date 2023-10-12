@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:40:48 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/12 12:31:21 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/12 14:51:17 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ protected:
 
 public:
     virtual ~Animal();
-    virtual void makeSound() const;
+    virtual void makeSound() const = 0;
     virtual std::string getType() const;
     virtual void setType(std::string);
 };
