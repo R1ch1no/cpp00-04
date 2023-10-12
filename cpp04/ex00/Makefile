@@ -6,7 +6,7 @@
 #    By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/11 15:40:59 by rkurnava          #+#    #+#              #
-#    Updated: 2023/10/11 16:54:06 by rkurnava         ###   ########.fr        #
+#    Updated: 2023/10/12 19:00:00 by rkurnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,10 @@ INCLUDES1 = Dog.hpp
 INCLUDES2 = Cat.hpp
 
 INCLUDES3 = Animal.hpp
+
+INCLUDES4 = WrongAnimal.hpp
+
+INCLUDES5 = WrongCat.hpp
 
 all : $(NAME)
 
@@ -35,19 +39,27 @@ OBJ3 = $(SRC3:.cpp=.o)
 SRC4 = Animal.cpp
 OBJ4 = $(SRC4:.cpp=.o)
 
-$(OBJ1):$(INCLUDES1) $(INCLUDES2)
+SRC5 = WrongAnimal.cpp
+OBJ5 = $(SRC5:.cpp=.o)
+
+SRC6 = WrongCat.cpp
+OBJ6 = $(SRC6:.cpp=.o)
+
+$(OBJ1):$(INCLUDES1) $(INCLUDES2) $(INCLUDES5)
 $(OBJ2):$(INCLUDES1) $(INCLUDES3)
 $(OBJ3):$(INCLUDES2) $(INCLUDES3)
 $(OBJ4):$(INCLUDES3)
+$(OBJ5):$(INCLUDES4)
+$(OBJ6):$(INCLUDES5) $(INCLUDES4)
 
-$(NAME): $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4)
-	$(CXX) $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4) -o $(NAME)
+$(NAME): $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6)
+	$(CXX) $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6) -o $(NAME)
 
 %.o: %.cpp
 	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 clean :
-	@rm -f $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4)
+	@rm -f $(OBJ1) $(OBJ2) $(OBJ3) $(OBJ4) $(OBJ5) $(OBJ6)
 	@echo "Cleaning done"
 
 fclean : clean
