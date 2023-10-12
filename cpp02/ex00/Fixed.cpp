@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:54:32 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/10 16:48:14 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:40:38 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 //-----------------Default-----------------------//
 
-Fixed::Fixed()
+Fixed::Fixed(): fixed_point(0)
 {
-    fixed_point = 0;
     std::cout << "Default contructor called" << std::endl;
 }
 
@@ -35,7 +34,7 @@ Fixed &Fixed::operator=(const Fixed &other)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)
-        fixed_point = other.getRawBits();
+        this->fixed_point = other.getRawBits();
     return (*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 19:06:13 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/10 16:51:57 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:55:53 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,32 +41,32 @@ Fixed::Fixed(float const num)
 }
 
 
-int Fixed::operator<(Fixed const &other)
+int Fixed::operator<(Fixed const &other) const
 {
     return (this->fixed_point < other.fixed_point);
 }
 
-int Fixed::operator>(Fixed const &other)
+int Fixed::operator>(Fixed const &other) const
 {
     return (this->fixed_point > other.fixed_point);
 }
 
-int Fixed::operator<=(Fixed const &other)
+int Fixed::operator<=(Fixed const &other) const
 {
     return (this->fixed_point <= other.fixed_point);
 }
 
-int Fixed::operator>=(Fixed const &other)
+int Fixed::operator>=(Fixed const &other) const
 {
     return (this->fixed_point >= other.fixed_point);
 }
 
-int Fixed::operator==(Fixed const &other)
+int Fixed::operator==(Fixed const &other) const
 {
     return (this->fixed_point == other.fixed_point);
 }
 
-int Fixed::operator!=(Fixed const &other)
+int Fixed::operator!=(Fixed const &other) const
 {
     return (this->fixed_point != other.fixed_point);
 }
@@ -133,8 +133,8 @@ Fixed &Fixed::min(Fixed &one, Fixed &two)
 Fixed Fixed::min(Fixed const &one, Fixed const &two)
 {
     if (one.fixed_point < two.fixed_point)
-        return one;
-    return two;
+        return (one);
+    return (two);
 }
 
 Fixed &Fixed::max(Fixed &one, Fixed &two)
@@ -147,8 +147,8 @@ Fixed &Fixed::max(Fixed &one, Fixed &two)
 Fixed Fixed::max(Fixed const &one, Fixed const &two)
 {
     if (one.fixed_point > two.fixed_point)
-        return one;
-    return two;
+        return (one);
+    return (two);
 }
 
 int Fixed::getRawBits(void) const
