@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 19:06:13 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/10 16:49:45 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/12 12:59:43 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 
 //-----------------Default-----------------------//
 
-Fixed::Fixed()
+Fixed::Fixed():fixed_point(0)
 {
-    fixed_point = 0;
     std::cout << "Default contructor called" << std::endl;
 }
 
