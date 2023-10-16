@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/10 19:52:13 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/12 18:02:00 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/16 19:17:22 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ FragTrap &FragTrap::operator=(FragTrap const &other)
     {
         this->name = other.name;
         this->hit_points = other.hit_points;
-        this->energy_points = this->energy_points;
+        this->energy_points = other.energy_points;
         this->attack_damage = other.attack_damage;
     }
     return (*this);

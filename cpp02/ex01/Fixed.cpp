@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 19:06:13 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/16 12:54:38 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/16 14:37:41 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,15 @@ float Fixed::toFloat(void) const
 
 int Fixed::toInt(void) const
 {
-    return (this->getRawBits() >> this->fractional_bits);
+    int res;
+    if (this->getRawBits() < 0)
+    {
+        res = this->fixed_point * -1;
+        res = res >> this->fractional_bits;
+        return (res * -1);
+    }
+    else
+        return ((int)this->getRawBits() >> this->fractional_bits);
 }
  
 std::ostream & operator<<(std::ostream &out, Fixed const &other)
