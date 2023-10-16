@@ -6,13 +6,15 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 19:06:13 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/12 12:59:43 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/16 12:54:38 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 //-----------------Default-----------------------//
+
+const int Fixed::fractional_bits = 8;
 
 Fixed::Fixed():fixed_point(0)
 {

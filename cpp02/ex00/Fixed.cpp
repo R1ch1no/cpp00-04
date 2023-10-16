@@ -6,13 +6,15 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/06 14:54:32 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/12 15:51:43 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/16 12:58:29 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
 //-----------------Default-----------------------//
+
+const int Fixed::fractional_bits = 8;
 
 Fixed::Fixed(): fixed_point(0)
 {
@@ -30,7 +32,7 @@ Fixed::Fixed(Fixed const & other)
     *this = other;
 }
 
-Fixed &Fixed::operator=(const Fixed &other)
+Fixed &Fixed::operator=(Fixed const &other)
 {
     std::cout << "Copy assignment operator called" << std::endl;
     if (this != &other)

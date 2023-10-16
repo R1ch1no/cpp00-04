@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/09 19:06:15 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/12 15:51:22 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/16 12:54:34 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ class Fixed
 {
     private :
         int fixed_point;
-        static const int fractional_bits = 8;
+        static const int fractional_bits;
     public :
         Fixed();
         Fixed(int const num);
