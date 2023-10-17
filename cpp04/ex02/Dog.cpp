@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:40:53 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/11 18:14:44 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/10/17 14:42:59 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 Dog::Dog()
 {
     type = "dog";
-    brain = new Brain();
+    this->brain = new Brain();
     std::cout << "Dog default constructor called" << std::endl;
 }
 
@@ -29,13 +29,16 @@ Dog &Dog::operator=(Dog const &other)
 {
     std::cout << "Dog copy assignment constructor called" << std::endl;
     if (this != &other)
+    {
+        this->brain = new Brain(*other.brain);
         this->type = other.type;
+    }
     return (*this);
 }
 
 Dog::~Dog() 
 {
-    delete brain;
+    delete this->brain;
     std::cout << "Dog destructor called" << std::endl;
 }
 

@@ -13,7 +13,7 @@
 NAME = ex00
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -g
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98
 
 INCLUDES1 = Dog.hpp
 
