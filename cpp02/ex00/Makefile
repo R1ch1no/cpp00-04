@@ -6,14 +6,14 @@
 #    By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/06 14:54:26 by rkurnava          #+#    #+#              #
-#    Updated: 2023/10/06 14:55:28 by rkurnava         ###   ########.fr        #
+#    Updated: 2023/11/05 18:40:39 by rkurnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex00
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 INCLUDES = ./Fixed.hpp
 

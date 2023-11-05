@@ -6,14 +6,14 @@
 #    By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/14 17:10:59 by rkurnava          #+#    #+#              #
-#    Updated: 2023/10/03 13:49:50 by rkurnava         ###   ########.fr        #
+#    Updated: 2023/11/05 18:34:27 by rkurnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = megaphone
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 all : $(NAME)
 

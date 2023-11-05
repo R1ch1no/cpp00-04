@@ -6,14 +6,14 @@
 #    By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/11 15:40:59 by rkurnava          #+#    #+#              #
-#    Updated: 2023/10/12 19:00:00 by rkurnava         ###   ########.fr        #
+#    Updated: 2023/11/05 18:45:05 by rkurnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = ex00
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 INCLUDES1 = Dog.hpp
 

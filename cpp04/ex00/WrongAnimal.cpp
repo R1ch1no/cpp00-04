@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:40:46 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/12 18:53:31 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/11/05 18:47:09 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 WrongAnimal::WrongAnimal() : type("animal")
 {
     std::cout << "WrongAnimal default constructor called" << std::endl;
-};
+}
 
 WrongAnimal::WrongAnimal(WrongAnimal const &other)
 {

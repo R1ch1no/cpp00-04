@@ -6,7 +6,7 @@
 #    By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/10/03 19:44:54 by rkurnava          #+#    #+#              #
-#    Updated: 2023/10/04 19:18:13 by rkurnava         ###   ########.fr        #
+#    Updated: 2023/11/05 18:37:23 by rkurnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 NAME = ex01
 
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 INCLUDES = ./Zombie.hpp
 

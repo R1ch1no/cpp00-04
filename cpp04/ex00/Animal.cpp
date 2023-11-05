@@ -6,14 +6,14 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/11 15:40:46 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/12 18:50:09 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/11/05 18:46:48 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
 Animal::Animal():type("animal")
-{std::cout << "Animal default constructor called" << std::endl;};
+{std::cout << "Animal default constructor called" << std::endl;}
 
 
 Animal::Animal(Animal const & other)

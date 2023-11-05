@@ -6,13 +6,13 @@
 #    By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/09/14 17:10:59 by rkurnava          #+#    #+#              #
-#    Updated: 2023/10/04 19:13:11 by rkurnava         ###   ########.fr        #
+#    Updated: 2023/11/05 18:35:10 by rkurnava         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = phoneBook
 CXX = c++
-CXXFLAGS = -Wall -Wextra -Werror -std=c++98
+CXXFLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
 
 all: $(NAME)
 

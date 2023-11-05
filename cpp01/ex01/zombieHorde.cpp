@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 09:19:41 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/04 11:05:24 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/11/05 18:37:34 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,3 +24,4 @@ Zombie* zombieHorde(int N, std::string name)
         zombies[i].nameAnyZombie(name);
     return (zombies);
 }
+

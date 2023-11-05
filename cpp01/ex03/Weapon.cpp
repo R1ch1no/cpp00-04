@@ -6,7 +6,7 @@
 /*   By: rkurnava <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/04 12:13:59 by rkurnava          #+#    #+#             */
-/*   Updated: 2023/10/04 15:30:36 by rkurnava         ###   ########.fr       */
+/*   Updated: 2023/11/05 18:39:29 by rkurnava         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,4 @@ void Weapon::setType(std::string typ)
 {
 	this->type = typ;
 }
+
